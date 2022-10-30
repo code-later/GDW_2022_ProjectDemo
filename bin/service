@@ -3,6 +3,6 @@
 case $SERVICE in
   web)
       rm -rf /tmp/server.pid
-      rails server --pid /tmp/servcer.pid
+      rails server --pid /tmp/server.pid
     ;;
 esac
