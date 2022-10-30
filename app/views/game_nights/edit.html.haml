@@ -1,0 +1,7 @@
+%h1 Editing game night
+= render "form", game_night: @game_night
+%br/
+%div
+  = link_to "Show this game night", @game_night
+  |
+  \#{link_to "Back to game nights", game_nights_path}
