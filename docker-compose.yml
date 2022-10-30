@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  web:
+    environment:
+      EDITOR: vim
+      RACK_ENV: development
+      RAILS_ENV: development
+      DATABASE_URL: ${DATABASE_URL:-postgres://postgres:secretsecretsecret@db/gamenight}
+      TEST_DATABASE_URL: ${TEST_DATABASE_URL:-postgres://postgres:secretsecretsecret@db/gamenight_test}
+    stdin_open: true
+    tty: true
+    user: "${USER_MAPPING:-app:app}"
+    build:
+      context: .
+      args:
+        service: web
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - bundle:/bundle
+
+  db:
+    environment:
+      POSTGRES_PASSWORD: secretsecretsecret
+    image: postgres:latest
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+volumes:
+  bundle:
+  db:
