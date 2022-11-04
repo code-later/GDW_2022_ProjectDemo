@@ -1,10 +1,21 @@
-%p{:style => "color: green"}= notice
-%h1 Game nights
-#game_nights
-  - @game_nights.each do |game_night|
-    = render game_night
-    %p
-      = link_to "Show this game night", game_night
+%h1 Spieleabende
 
-%hr
-= link_to "New game night", new_game_night_path
+#game_nights
+  %table
+    %thead
+      %tr
+        %th Titel
+        %th Wann?
+        %th Spieler:innen
+    %tbody
+      - @game_nights.each do |game_night|
+        %tr{id: "#{dom_id game_night}"}
+          %th= link_to game_night.title, game_night
+          %th= l game_night.takes_place_at
+          %th
+            %ul
+              - game_night.players.each do |player|
+                %li= link_to player.name, player_url(player)
+
+= link_to new_game_night_path do
+  %button Neuen Spieleabend

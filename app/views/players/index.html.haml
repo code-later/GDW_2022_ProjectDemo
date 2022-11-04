@@ -1,8 +1,16 @@
-%p{:style => "color: green"}= notice
-%h1 Players
+%h1 Spieler:innen
+
 #players
-  - @players.each do |player|
-    = render player
-    %p
-      = link_to "Show this player", player
-= link_to "New player", new_player_path
+  %table
+    %thead
+      %tr
+        %th Name
+        %th Nickname
+    %tbody
+    - @players.each do |player|
+      %tr{id: "#{dom_id player}"}
+        %th= link_to player.name, player
+        %th= player.nickname
+
+= link_to new_player_path do
+  %button Neue Spieler:in

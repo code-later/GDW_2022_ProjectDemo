@@ -1,17 +1,16 @@
 = form_with(model: game_night) do |form|
   - if game_night.errors.any?
-    %div{:style => "color: red"}
-      %h2
-        = pluralize(game_night.errors.count, "error")
-        prohibited this game_night from being saved:
+    %article
+      %bold
+        = "#{game_night.errors.count} Fehler haben das Speichern verhindert!"
       %ul
         - game_night.errors.each do |error|
           %li= error.full_message
-  %div
-    = form.label :title, style: "display: block"
+  %p
+    = form.label :title
     = form.text_field :title
-  %div
-    = form.label :takes_place_at, style: "display: block"
+  %p
+    = form.label :takes_place_at
     = form.datetime_field :takes_place_at
-  %div
-    = form.submit
+
+  = form.submit

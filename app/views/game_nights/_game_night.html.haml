@@ -1,12 +1,12 @@
 %div{:id => "#{dom_id game_night}"}
   %p
-    %strong Title:
+    %strong Titel:
     = game_night.title
   %p
-    %strong Takes place at:
+    %strong Wann?:
     = game_night.takes_place_at
   %p
-    %strong Players:
+    %strong Spieler:innen:
     %ul
-    - game_night.players.each do |player|
-      %li= link_to player.name, player_url(player)
+      - game_night.players.each do |player|
+        %li= link_to player.name, player_url(player)

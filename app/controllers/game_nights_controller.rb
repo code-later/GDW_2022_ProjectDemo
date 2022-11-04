@@ -25,7 +25,7 @@ class GameNightsController < ApplicationController
 
     respond_to do |format|
       if @game_night.save
-        format.html { redirect_to game_night_url(@game_night), notice: "Game night was successfully created." }
+        format.html { redirect_to game_night_url(@game_night), notice: "Spieleabend wurde erfolgreich angelegt." }
         format.json { render :show, status: :created, location: @game_night }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class GameNightsController < ApplicationController
   def update
     respond_to do |format|
       if @game_night.update(game_night_params)
-        format.html { redirect_to game_night_url(@game_night), notice: "Game night was successfully updated." }
+        format.html { redirect_to game_night_url(@game_night), notice: "Spieleabend wurde erfolgreich gespeichert." }
         format.json { render :show, status: :ok, location: @game_night }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class GameNightsController < ApplicationController
     @game_night.destroy
 
     respond_to do |format|
-      format.html { redirect_to game_nights_url, notice: "Game night was successfully destroyed." }
+      format.html { redirect_to game_nights_url, notice: "Spieleabend wurde erfolgreich gelöscht." }
       format.json { head :no_content }
     end
   end

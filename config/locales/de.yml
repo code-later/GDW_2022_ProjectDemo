@@ -1,0 +1,14 @@
+de:
+  activerecord:
+    models:
+      game_night: "Spieleabend"
+      player: "Spieler:in"
+    attributes:
+      game_night:
+        title: "Titel"
+        takes_place_at: "Wann geht es los?"
+      player:
+        name: "Name"
+        email: "E-Mail"
+        nickname: "Nickname"
+        game_night_id: "Spieleabend"
