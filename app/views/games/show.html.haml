@@ -1,0 +1,5 @@
+.Game
+  = image_tag @game.picture_url, class: "Game_picture"
+  .Game_name= link_to @game.name, game_path(@game)
+  .Game_rating
+    %span= number_with_precision(@game.rating, precision: 1)

@@ -1,6 +1,10 @@
 %h1 Ludothek von #{@player.name} (#{pluralize(@game_library.games.count, 'Spiel', plural: 'Spiele')})
 
 - if @game_library.bgg_sync_completed?
+  %ul.GameLibrary_gamesList
+    - @game_library.games.each do |game|
+      %li.GameLibrary_gamesList_item
+        %embed-link= link_to game_path(game), game_path(game)
 - else
   = render 'application/loading_animation', refresh_url: player_game_library_path(player_id: @player) do
     %p

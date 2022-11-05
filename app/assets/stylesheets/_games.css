@@ -1,0 +1,60 @@
+.Game {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.Game_picture {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.Game_rating {
+  cursor: default;
+  position: relative;
+  width: 100px;
+  height: 57.73502691896258px;
+  background-color: #e4ecf4;
+  box-shadow: 0 0 0px rgba(0,255,255,1);
+  display: grid;
+  transition: 0s;
+}
+
+.Game_rating:before, .Game_rating:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 70.71067811865474px;
+  height: 70.71067811865474px;
+  transform: scaleY(0.5774) rotate(-45deg);
+  background-color: inherit;
+  left: 14.64466094067263px;
+  box-shadow: 0 0 0px rgba(0,255,255,1);
+  transition: 0s;
+}
+
+.Game_rating:before {
+  top: -35.35533905932737px;
+}
+.Game_rating:after {
+  bottom: -35.35533905932737px;
+}
+
+.Game_rating span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 32px;
+  color: #000;
+  font-family: monospace;
+  top: 0px;
+  left: 0;
+  width: 100px;
+  height: 57.7350px;
+  z-index: 2;
+  background: inherit;
+  transition: 0s;
+}
