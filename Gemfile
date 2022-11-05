@@ -32,6 +32,10 @@ gem "jbuilder"
 # Use Haml instead of HTML
 gem "haml-rails"
 
+gem "faraday"
+gem "faraday-httpclient"
+gem "faraday-decode_xml"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
