@@ -1,1 +1,10 @@
-%h1 Ludothek von #{@player.name}
+%h1 Ludothek von #{@player.name} (#{pluralize(@game_library.games.count, 'Spiel', plural: 'Spiele')})
+
+- if @game_library.bgg_sync_completed?
+- else
+  = render 'application/loading_animation', refresh_url: player_game_library_path(player_id: @player) do
+    %p
+      Daten werden von BoardGameGeek geladen
+
+    = button_to player_game_library_path(player_id: @player), method: "put" do
+      = "Ludothek von BGG laden"
