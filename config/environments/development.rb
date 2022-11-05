@@ -50,6 +50,8 @@ Rails.application.configure do
   # Tell Active Support which deprecation messages to disallow.
   config.active_support.disallowed_deprecation_warnings = []
 
+  config.web_console.allowed_ips = ["172.0.0.0/8", "192.168.0.0/16"]
+
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
