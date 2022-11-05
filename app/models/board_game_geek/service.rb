@@ -12,7 +12,7 @@ class BoardGameGeek
           Game.new(
             id: item['objectid'],
             name: item.dig('name', '__content__'),
-            picture: item['image'],
+            picture: item['thumbnail'],
             rating: item.dig('stats', 'rating', 'bayesaverage', 'value').to_f
           )
         end
