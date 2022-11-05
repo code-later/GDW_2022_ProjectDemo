@@ -1,9 +1,12 @@
 de:
   activerecord:
     models:
+      game_library: "Ludothek"
       game_night: "Spieleabend"
       player: "Spieler:in"
     attributes:
+      game_library:
+        bgg_username: "BGG Benutzername"
       game_night:
         title: "Titel"
         takes_place_at: "Wann geht es los?"

@@ -11,3 +11,5 @@
   %p
     %strong Spieleabend:
     = player.game_night_id
+
+= link_to "Zur Ludothek von #{player.name}", player_game_library_path(player_id: player)
