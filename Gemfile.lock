@@ -76,6 +76,15 @@ GEM
       irb (>= 1.3.6)
       reline (>= 0.3.1)
     erubi (1.11.0)
+    faraday (2.6.0)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-decode_xml (0.2.1)
+      faraday (< 3.0)
+      multi_xml (< 1.0)
+    faraday-httpclient (2.0.1)
+      httpclient (>= 2.2)
+    faraday-net_http (3.0.1)
     globalid (1.0.0)
       activesupport (>= 5.0)
     haml (6.0.8)
@@ -87,6 +96,7 @@ GEM
       activesupport (>= 5.1)
       haml (>= 4.0.6)
       railties (>= 5.1)
+    httpclient (2.8.3)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -108,6 +118,7 @@ GEM
     mini_mime (1.1.2)
     minitest (5.16.3)
     msgpack (1.6.0)
+    multi_xml (0.6.0)
     net-imap (0.3.1)
       net-protocol
     net-pop (0.1.2)
@@ -158,6 +169,7 @@ GEM
     rake (13.0.6)
     reline (0.3.1)
       io-console (~> 0.5)
+    ruby2_keywords (0.0.5)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -193,6 +205,9 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  faraday
+  faraday-decode_xml
+  faraday-httpclient
   haml-rails
   importmap-rails
   jbuilder

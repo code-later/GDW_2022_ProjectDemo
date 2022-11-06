@@ -58,13 +58,14 @@ class GameNightsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_game_night
-      @game_night = GameNight.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def game_night_params
-      params.require(:game_night).permit(:title, :takes_place_at)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_game_night
+    @game_night = GameNight.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def game_night_params
+    params.require(:game_night).permit(:title, :takes_place_at)
+  end
 end

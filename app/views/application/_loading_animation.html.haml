@@ -1,0 +1,9 @@
+%loading-animation{ "refresh-delay": 2000 }
+  %aside
+    = yield
+    .lds-ellipsis
+      %div
+      %div
+      %div
+      %div
+    = link_to "Neuladen", refresh_url, class: "LoadingAnimation_refreshLink"

@@ -1,0 +1,17 @@
+.GameLibrary_gamesList {
+  list-style: none;
+}
+
+.GameLibrary_gamesList_item {
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.GameLibrary_gamesList_item:nth-child(odd) {
+  background-color: #ED458B;
+  color: white;
+}
+
+.GameLibrary_gamesList_item a {
+  color: inherit;
+}

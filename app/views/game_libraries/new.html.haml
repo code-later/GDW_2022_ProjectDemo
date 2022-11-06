@@ -1,0 +1,17 @@
+%h1 Neue Ludothek anlegen
+
+= form_with(model: @game_library, url: player_game_library_path(player_id: @player)) do |form|
+  - if @game_library.errors.any?
+    %article
+      %bold
+        = "#{@game_library.errors.count} Fehler haben das Speichern verhindert!"
+      %ul
+        - @game_library.errors.each do |error|
+          %li= error.full_message
+  %p
+    = form.label :bgg_username
+    = form.text_field :bgg_username
+
+  = form.submit
+
+= link_to "Abbrechen", player_path(@player)
